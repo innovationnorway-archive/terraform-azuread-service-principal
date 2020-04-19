@@ -1,0 +1,19 @@
+name: validate-test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: innovationnorway/setup-terraform@v1
+    - run: terraform fmt -check
+    - run: |
+        terraform init -backend=false -input=false
+        terraform validate
+      working-directory: ./test

@@ -1,5 +1,7 @@
 # Azure AD Service Principal
 
+![validate-test](https://github.com/innovationnorway/terraform-azuread-service-principal/workflows/validate-test/badge.svg)
+
 > ⚠️ **Warning**: This module will happily expose service principal credentials. All arguments including the service principal password will be persisted into Terraform state, into any plan files, and in some cases in the console output while running `terraform plan` and `terraform apply`. Read more about [sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).
 
 Create a service principal and configure it's access to Azure resources.
