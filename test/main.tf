@@ -11,7 +11,7 @@ module "service_principal" {
 
   name = format("%s-%s", var.name_prefix, random_id.test.hex)
 
-  end_date = "1W"
+  years = 1
 
   role = "Contributor"
 }

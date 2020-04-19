@@ -1,8 +1,9 @@
 terraform {
-  required_version = "~> 0.12.8"
+  required_version = ">= 0.12.21"
   required_providers {
-    azuread = "~> 0.6"
-    azurerm = "~> 1.35"
-    random  = "~> 2.2"
+    azuread = ">= 0.8.0"
+    azurerm = ">= 2.4.0"
+    random  = ">= 2.2.0"
+    time    = ">= 0.3.0"
   }
 }
