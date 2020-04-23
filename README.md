@@ -43,4 +43,4 @@ module "service_principal" {
 | `end_date` | `string` | The date after which the password expire. This should be UTC [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) (`YYYY-MM-DDTHH:MM:SSZ`). |
 | `years` | `number` | The number of years after which the password expire. Either this or `end_date` should be specified, but not both. Default: `1`. |
 | `role` | `string` | The name of a [built-in](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles) or custom role for the service principal. |
-| `scopes` | `set` | A set of scopes the `role` assignment applies to. |
+| `scopes` | `list` | A list of scopes the `role` assignment applies to. |

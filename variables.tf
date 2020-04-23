@@ -28,11 +28,11 @@ variable "role" {
 }
 
 variable "scopes" {
-  type        = set(string)
+  type        = list(string)
   default     = []
-  description = "A set of scopes the role assignment applies to."
+  description = "A list of scopes the role assignment applies to."
 }
 
 locals {
-  scopes = length(var.scopes) > 0 ? var.scopes : toset([data.azurerm_subscription.main.id])
+  scopes = length(var.scopes) > 0 ? var.scopes : [data.azurerm_subscription.main.id]
 }
