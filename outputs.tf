@@ -10,7 +10,7 @@ output "application_id" {
 
 output "client_id" {
   value       = azuread_application.main.application_id
-  description = "Echoes the `client_id` output value, for convenience if passing the result of this module elsewhere as an object."
+  description = "Echoes the `application_id` output value, for convenience if passing the result of this module elsewhere as an object."
 }
 
 output "object_id" {

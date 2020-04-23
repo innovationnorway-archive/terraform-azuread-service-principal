@@ -4,6 +4,6 @@ terraform {
     azuread = ">= 0.8.0"
     azurerm = ">= 2.4.0"
     random  = ">= 2.2.0"
-    time    = ">= 0.3.0"
+    time    = ">= 0.4.0"
   }
 }
