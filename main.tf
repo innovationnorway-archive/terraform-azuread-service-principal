@@ -20,8 +20,13 @@ resource "azuread_service_principal" "main" {
 }
 
 resource "time_rotating" "main" {
-  rotation_rfc3339 = var.end_date != "" ? var.end_date : null
-  rotation_years   = var.end_date == "" ? var.years : null
+  rotation_rfc3339 = var.end_date
+  rotation_years   = var.years
+
+  triggers = {
+    end_date = var.end_date
+    years    = var.years
+  }
 }
 
 resource "random_password" "main" {
@@ -29,7 +34,7 @@ resource "random_password" "main" {
   length = 32
 
   keepers = {
-    end_date = time_rotating.main.rotation_rfc3339
+    rfc3339 = time_rotating.main.id
   }
 }
 

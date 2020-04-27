@@ -11,13 +11,13 @@ variable "password" {
 
 variable "end_date" {
   type        = string
-  default     = ""
+  default     = null
   description = "The relative duration or RFC3339 date after which the password expire."
 }
 
 variable "years" {
   type        = number
-  default     = 1
+  default     = null
   description = "The number of years after which the password expire. Either this or `end_date` should be specified, but not both."
 }
 

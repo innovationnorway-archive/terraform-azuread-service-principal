@@ -14,7 +14,7 @@ Create a service principal and configure it's access to Azure resources.
 module "service_principal" {
   source = "innovationnorway/service-principal/azuread"
   name   = "example"
-  years  = 2
+  years  = 1
 }
 ```
 
@@ -29,6 +29,7 @@ resource "azurerm_resource_group" "example" {
 module "service_principal" {
   source = "innovationnorway/service-principal/azuread"
   name   = "example"
+  years  = 1
   role   = "Contributor"
   scopes = [azurerm_resource_group.example.id]
 }
@@ -41,6 +42,6 @@ module "service_principal" {
 | `name` | `string` | **Required.** The name of the service principal. |
 | `password` | `string` | A password for the service principal. If missing, Terraform will generate a password. |
 | `end_date` | `string` | The date after which the password expire. This should be UTC [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) (`YYYY-MM-DDTHH:MM:SSZ`). |
-| `years` | `number` | The number of years after which the password expire. Either this or `end_date` should be specified, but not both. Default: `1`. |
+| `years` | `number` | The number of years after which the password expire. Either this or `end_date` should be specified, but not both. |
 | `role` | `string` | The name of a [built-in](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles) or custom role for the service principal. |
 | `scopes` | `list` | A list of scopes the `role` assignment applies to. |
