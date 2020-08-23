@@ -1,6 +1,6 @@
 # Azure AD Service Principal
 
-![validate-test](https://github.com/innovationnorway/terraform-azuread-service-principal/workflows/validate-test/badge.svg)
+![test](https://github.com/innovationnorway/terraform-azuread-service-principal/workflows/test/badge.svg)
 
 Create a service principal and configure it's access to Azure resources.
 
