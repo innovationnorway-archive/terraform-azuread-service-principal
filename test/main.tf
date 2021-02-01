@@ -17,7 +17,7 @@ module "service_principal" {
 }
 
 data "azuread_application" "test" {
-  name = module.service_principal.name
+  display_name = module.service_principal.name
 }
 
 output "service_principal" {
