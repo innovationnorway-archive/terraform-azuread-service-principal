@@ -27,6 +27,12 @@ variable "role" {
   description = "The name of a role for the service principal."
 }
 
+variable "role_id" {
+  type        = string
+  default     = ""
+  description = "The id of a role for the service principal. (use role or role_id)"
+}
+
 variable "scopes" {
   type        = list(string)
   default     = []
