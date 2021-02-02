@@ -1,0 +1,17 @@
+name: TFlint
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "**.md"
+  pull_request:
+    paths-ignore:
+      - "**.md"
+jobs:
+  tflint:
+    runs-on: ubuntu-latest
+    container: wata727/tflint
+    steps:
+      - uses: actions/checkout@v2
+      - run: tflint
