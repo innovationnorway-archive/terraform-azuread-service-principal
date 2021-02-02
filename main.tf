@@ -8,7 +8,7 @@ data "azurerm_role_definition" "main" {
 data "azurerm_subscription" "main" {}
 
 resource "azuread_application" "main" {
-  name = var.name
+  display_name = var.name
   identifier_uris = [
     format("http://%s", var.name)
   ]
